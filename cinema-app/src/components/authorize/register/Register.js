@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { register } from "../../../redux/slices/auth";
-import { clearMessage  } from "../../../redux/slices/message";
-
+import { clearMessage } from "../../../redux/slices/message";
 const Register = () => {
   const [successful, setSuccessful] = useState(false);
 
@@ -18,16 +17,17 @@ const Register = () => {
     username: "",
     email: "",
     password: "",
+    passwordAgain: "",
+    phonenumber: "",
   };
 
- 
-
   const handleRegister = (formValue) => {
-    const { username, email, password } = formValue;
+    const { username, email, password,phonenumber } = formValue;
 
     setSuccessful(false);
 
-    dispatch(register({ username, email, password }))
+    dispatch(register({ username, email, password,phonenumber }))
+
       .unwrap()
       .then(() => {
         setSuccessful(true);
@@ -45,10 +45,8 @@ const Register = () => {
           alt="profile-img"
           className="profile-img-card"
         />
-        <Formik
-          initialValues={initialValues}
-          onSubmit={handleRegister}
-        >
+
+        <Formik initialValues={initialValues} onSubmit={handleRegister}>
           <Form>
             {!successful && (
               <div>
@@ -85,9 +83,36 @@ const Register = () => {
                     className="alert alert-danger"
                   />
                 </div>
-
                 <div className="form-group">
-                  <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+                  <label htmlFor="password">Password Again</label>
+                  <Field
+                    name="passwordAgain"
+                    type="password"
+                    className="form-control"
+                  />
+                  <ErrorMessage
+                    name="passwordAgain"
+                    component="div"
+                    className="alert alert-danger"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phonenumber">phonenumber</label>
+                  <Field
+                    name="phonenumber"
+                    type="phonenumber"
+                    className="form-control"
+                  />
+                  <ErrorMessage
+                    name="phonenumber"
+                    component="div"
+                    className="alert alert-danger"
+                  />
+                </div>
+                <div className="form-group">
+                  <button type="submit" className="btn btn-primary btn-block">
+                    Sign Up
+                  </button>
                 </div>
               </div>
             )}
@@ -98,7 +123,10 @@ const Register = () => {
       {message && (
         <div className="form-group">
           <div
-            className={successful ? "alert alert-success" : "alert alert-danger"}
+            className={
+              successful ? "alert alert-success" : "alert alert-danger"
+            }
+
             role="alert"
           >
             {message}

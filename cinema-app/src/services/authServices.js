@@ -1,16 +1,15 @@
 import axios from "../setup/axios";
 const API_URL = "/api/v1/"
-const login = (username, password) => {
+const login = (email, password) => {
   return axios
     .post(API_URL + "login", {
-      username,
+      email,
       password,
     })
     .then((response) => {
-      if (response.data.accessToken) {
+      if (response.data) {
         localStorage.setItem("user", JSON.stringify(response.data));
       }
-
       return response.data;
     });
 };
