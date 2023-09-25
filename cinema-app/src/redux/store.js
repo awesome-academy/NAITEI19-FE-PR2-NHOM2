@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "../redux/slices/auth"
 import messageReducer from "../redux/slices/message"
-
+import userSlice from "../redux/slices/userSlice"
 // const persistConfig = {
 //   key: "root",
 //   storage,
@@ -17,7 +17,8 @@ import messageReducer from "../redux/slices/message"
 // export const persistor = persistStore(store);
 const reducer = {
   auth: authReducer,
-  message: messageReducer
+  message: messageReducer,
+  user : userSlice
 }
 
 const store = configureStore({

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import EventBus from "./common/EventBus"
 import Register from "./components/authorize/register/Register";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   const dispatch = useDispatch();
 
