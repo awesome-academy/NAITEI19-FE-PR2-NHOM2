@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { register } from "../../../redux/slices/auth";
 import { clearMessage } from "../../../redux/slices/message";
-
 const Register = () => {
   const [successful, setSuccessful] = useState(false);
 
@@ -28,6 +27,7 @@ const Register = () => {
     setSuccessful(false);
 
     dispatch(register({ username, email, password,phonenumber }))
+
       .unwrap()
       .then(() => {
         setSuccessful(true);
@@ -45,6 +45,7 @@ const Register = () => {
           alt="profile-img"
           className="profile-img-card"
         />
+
         <Formik initialValues={initialValues} onSubmit={handleRegister}>
           <Form>
             {!successful && (
@@ -125,6 +126,7 @@ const Register = () => {
             className={
               successful ? "alert alert-success" : "alert alert-danger"
             }
+
             role="alert"
           >
             {message}

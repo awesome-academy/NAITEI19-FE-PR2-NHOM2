@@ -11,6 +11,7 @@ export const register = createAsyncThunk(
     try {
       const response = await service.register( email,username, password,phonenumber);
       thunkAPI.dispatch(setMessage(response.data?.EM));
+
       return response.data;
     } catch (error) {
       const message =
