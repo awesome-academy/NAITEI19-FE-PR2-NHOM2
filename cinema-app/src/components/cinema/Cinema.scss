@@ -1,0 +1,15 @@
+@import "../../Styles.scss";
+.navbar-address{
+    background-color: #dad2b4;
+    width:  100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: -20px;
+    .navbar-item{
+        padding: 5px 20px;
+    }
+}
