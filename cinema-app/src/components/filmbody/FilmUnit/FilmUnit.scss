@@ -1,0 +1,93 @@
+.film__unit {
+  width: 200px;
+  height: 400px;
+  margin-bottom: 150px !important;
+  .film__unit__img {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .film__unit__info {
+    border: 1px solid #ebebec;
+    .film__unit__title {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 10px 0 0 10px;
+      display: flex;
+      .film__unit__info__detail__type {
+        p {
+          border-radius: 50%;
+          height: 25px;
+          width: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+        }
+      }
+      .film__unit__info__name {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 90%!important; /* Đặt chiều rộng tối đa của thẻ p */
+        p {
+          max-height: 20px; /* Đặt chiều cao tối đa của thẻ p */
+          max-width: 100%!important; /* Đặt chiều rộng tối đa của thẻ p */
+          overflow: hidden; /* Ẩn nội dung vượt quá chiều cao tối đa */
+          text-overflow: ellipsis; /* Hiển thị dấu chấm ba chấm (...) cho nội dung bị cắt */
+            white-space: nowrap; /* Ngăn chặn xuống dòng */
+
+        }
+      }
+    }
+    .film__unit__info__detail {
+      display: flex;
+      border-top: 1px solid #ebebec;
+      padding: 5px 0 5px 50px;
+      .film__unit__info__detail__time {
+        padding-right: 10px;
+        border-right: 1px solid #ebebec;
+        margin-top: 5px;
+        display: flex;
+        p {
+          font-weight: 600;
+          font-size: 16px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .film__unit__info__detail__timestart {
+        padding-left: 10px;
+        margin-top: 5px;
+        p {
+            font-weight: 600;
+          font-size: 16px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+.type_pink {
+  background-color: #c41681;
+}
+.type_green {
+  background-color: #44c020;
+}
+.type_blue {
+  background-color: #0a9ad7;
+}
+.type_red {
+  background-color: #e9204f;
+}

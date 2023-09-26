@@ -1,0 +1,62 @@
+@import "../Styles.scss";
+
+.navbar {
+  font-family: $navlink-font-family;
+  color: $navlink-color;
+  background-color: $navbar-background-color;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 2px 0;
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: $navlink-color;
+  }
+
+  .navbar__primary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: $max-page-width;
+    font-size: 12px;
+    padding: 4px 0;
+    margin: 0 auto;
+    .navbar__primary__left {
+      display: flex;
+      gap: 15px;
+      font-weight: 600;
+      .navbar__item {
+        display: flex;
+        gap: 5px;
+      }
+    }
+
+    .navbar__primary__right {
+      display: flex;
+      text-align: right;
+      gap: 15px;
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .navbar__second {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar__third {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #fff;
+    margin-top: 3px;
+    padding: 20px 0;
+  }
+}
