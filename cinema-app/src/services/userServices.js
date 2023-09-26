@@ -5,3 +5,5 @@ const login = (email, password) => {
 const register = (email, password, name) => {
   return axios.post("/api/v1/register", { email, password, name });
 };
+
+
