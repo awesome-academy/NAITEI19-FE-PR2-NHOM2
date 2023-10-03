@@ -1,8 +1,250 @@
 import React, { useState,useEffect } from "react";
 import "./Cinema.scss";
-export default function CinemaDetail() {
+export default function CinemaDetail({cinema}) {
     const [showNavbar, setShowNavbar] = useState(false);
+    const movie = [
+      {   movieId : 1 ,
+          movieName : 'Biệt đội đánh thuê 4',
+          screen : [{screenName : 'Screen 01',
+                      time : '12:50',
+                      seat : '112/112'
+                  },
+                  {screenName : 'Screen 01',
+                      time : '12:50',
+                      seat : '112/112'
+                  },
+                  {screenName : 'Screen 01',
+                      time : '12:50',
+                      seat : '112/112'
+                  },
+                  {screenName : 'Screen 01',
+                      time : '12:50',
+                      seat : '112/112'
+                  },
+                  {screenName : 'Screen 01',
+                      time : '12:50',
+                      seat : '112/112'
+                  },
+                  {screenName : 'Screen 01',
+                      time : '12:50',
+                      seat : '112/112'
+                  },
+                  {screenName : 'Screen 01',
+                      time : '12:50',
+                      seat : '112/112'
+                  },
 
+                  {screenName : 'Screen 01',
+                      time : '12:50',
+                      seat : '112/112'
+                  },
+              ]
+
+  },
+  {   movieId : 2 ,
+      movieName : 'Ác quỷ ma sơ 2',
+      screen : [{screenName : 'Screen 01',
+                  time : '12:50',
+                  seat : '112/112'
+              },
+              {screenName : 'Screen 01',
+                  time : '12:50',
+                  seat : '112/112'
+              },
+              {screenName : 'Screen 01',
+                  time : '12:50',
+                  seat : '112/112'
+              },
+              {screenName : 'Screen 01',
+                  time : '12:50',
+                  seat : '112/112'
+              },
+              {screenName : 'Screen 01',
+                  time : '12:50',
+                  seat : '112/112'
+              },
+              {screenName : 'Screen 01',
+                  time : '12:50',
+                  seat : '112/112'
+              },
+              {screenName : 'Screen 01',
+                  time : '12:50',
+                  seat : '112/112'
+              },
+
+              {screenName : 'Screen 01',
+                  time : '12:50',
+                  seat : '112/112'
+              },
+          ]
+
+},
+{   movieId : 3 ,
+  movieName : 'Nhân Duyên Tiền Đình',
+  screen : [{screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+      ]
+
+},
+{   movieId : 4 ,
+  movieName : 'THE IU CONCERT: GOLDEN HOUR - THỜI KHẮC QUÝ GIÁ',
+  screen : [{screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+      ]
+
+},
+{   movieId : 5 ,
+  movieName : 'MUÔN KIẾP NHÂN DUYÊN',
+  screen : [{screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+      ]
+
+},
+{   movieId : 6 ,
+  movieName : 'ĐƠN HÀNG TỪ SÁT NHÂN',
+  screen : [{screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          
+      ]
+
+},
+{   movieId : 7 ,
+  movieName : 'HỌA QUỶ',
+  screen : [{screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+          {screenName : 'Screen 01',
+              time : '12:50',
+              seat : '112/112'
+          },
+      ]
+
+}
+  ]
     useEffect(() => {
       const handleScroll = () => {
         if (window.scrollY > 100) {
@@ -24,7 +266,7 @@ export default function CinemaDetail() {
         <div className="cinema-body">
           <div className="cinema-slider">
             <img
-              src="https://media.lottecinemavn.com/Media/WebAdmin/665ea93744c84f619e285c1f32ea0625.jpg"
+              src={cinema.imageUrl}
               alt=""
             />
           </div>
@@ -32,7 +274,7 @@ export default function CinemaDetail() {
             <div className="cinema-container__detail">
               <div className="cinema-infor">
                 <div className="cinema-infor__name">
-                  <h2>Cantavil</h2>
+                  <h2>{cinema.address}</h2>
                 </div>
                 <ul class="m_etc">
                   <li>
@@ -57,14 +299,13 @@ export default function CinemaDetail() {
                 </ul>
               </div>
               <p>
-                Tầng 7, Cantavil Premier, Số 1 đường Song Hành, Xa lộ Hà Nội,
-                P.An Phú, Q.2, TP.HCM, Việt Nam
+                {cinema.detailAddress}
               </p>
               <span class="p_theater">
-                Tổng số phòng chiếu <em id="emTotalScreenCount">8</em> phòng
+                Tổng số phòng chiếu <em id="emTotalScreenCount">{cinema.cinemaRoom}</em> phòng
               </span>
               <span class="p_seat">
-                Tổng số chỗ ngồi <em id="emTotalSeatCount">1.043</em> ghế
+                Tổng số chỗ ngồi <em id="emTotalSeatCount">{cinema.seat}</em> ghế
               </span>
               <div  className="showNavbar ? 'navbar visible' : 'navbar'">
                 <div className="navbar">
@@ -106,10 +347,13 @@ export default function CinemaDetail() {
               <div className="time_inner">
                 <div className="time_box time_list02">
                   <div className="time_aType time8099">
-                    <dl className="time_line movie11236">
+                    { movie.map( data =>
+
+                    
+                      <dl className="time_line movie11236" key={data.movieId}>
                       <dt>
                         <span class="grade_13"></span>
-                        BIỆT ĐỘI ĐÁNH THUÊ 4
+                        {data.movieName}
                         <a class="btn_detail">
                           <img
                             src="https://www.lottecinemavn.com/LCHS/Image/Btn/btn_time_view.png"
@@ -122,31 +366,34 @@ export default function CinemaDetail() {
                           <li>2D </li> <li>Phụ đề</li>
                         </ul>
                         <ul class="theater_time list11236" screendiv="100">
+                          {data.screen.map(src =>
                           <li>
                             <a
                               href="javascript:void(0);"
                               class="time_active t0"
-                            >
+                              >
                               <span class="cineD2 brand">
-                                <em>Screen02</em>
+                                <em>{src.screenName}</em>
                               </span>
                               <span class="clock">
-                                12:40<span> ~ 14:43</span>
+                                {src.time}<span> ~ 14:43</span>
                               </span>
                               <span class="ppNum">
                                 <em
                                   class="color_brown"
                                   title="Kiểm tra chỗ ngồi của bạn"
                                 >
-                                  134
+                                  {src.seat}
                                 </em>{" "}
-                                / 134 Ghế ngồi
+                                Ghế 
                               </span>
                             </a>
                           </li>
+                              )}
                         </ul>
                       </dd>
                     </dl>
+                    )}
                   </div>
                 </div>
               </div>
