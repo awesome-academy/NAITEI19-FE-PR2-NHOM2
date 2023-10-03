@@ -2,11 +2,12 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import FilmPage from "./pages/FilmPage";
-import FilmDetailPage from "./pages/FilmDetail"
+import FilmDetailPage from "./pages/FilmDetail";
 import TicketPage from "./pages/Ticket";
 import TicketDetailPage from "./pages/TicketDetail";
 import GiftShopPage from "./pages/GiftShopPage";
 import GiftShopDetailPage from "./pages/GiftShopDetail";
+import Order from "./pages/Order";
 function App() {
   return (
     <Routes>
@@ -17,6 +18,7 @@ function App() {
       <Route path="/event-detail" element={<TicketDetailPage />}></Route>
       <Route path="/gift-shop" element={<GiftShopPage />}></Route>
       <Route path="/gift-shop-detail" element={<GiftShopDetailPage />}></Route>
+      <Route path="/ticket" element={<Order />}></Route>
     </Routes>
   );
 }

@@ -1,0 +1,51 @@
+.film__card {
+  width: 175px;
+  overflow: hidden;
+  .film__info {
+    width: 175px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+    width: 100%;
+    gap: 3px;
+    .age__restrict__label {
+      font-size: 14px;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 25px;
+      height: 25px;
+    }
+    .age__0 {
+      background-color: #088210;
+    }
+    .age__13 {
+      background-color: #246ed8;
+    }
+    .age__16 {
+      background-color: #c60672;
+    }
+    .age__18 {
+      background-color: #e80808;
+    }
+    .name {
+      font-weight: 600;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}
+.selected {
+  border: solid #555 1px;
+  .film__info {
+    background-color: #555;
+    color: #fff;
+  }
+}
