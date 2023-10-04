@@ -1,0 +1,106 @@
+.film__detail {
+  .detail__img {
+    .img {
+      img {
+        width: 100%;
+      }
+    }
+    .button__book {
+      padding: 10px 0;
+      button {
+        width: 100% !important;
+        padding: 8px 0;
+        font-size: 1.8rem;
+        font-weight: 600;
+        background-color: #231f20 !important;
+        color: #cdc197 !important;
+      }
+    }
+  }
+  span {
+    font-size: 2.5rem;
+  }
+  .detail__script {
+    h2 {
+      margin-top: 5px !important;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    .script__rating {
+      .rating__text {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+      .rating__number {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-left: 10px;
+        font-style: italic;
+        color: #231f20;
+      }
+    }
+    .script__genre {
+      margin-top: 10px;
+      display: flex;
+      .genre__rank {
+        margin-right: 10px;
+        .rank__title {
+          font-size: 1.6rem;
+          font-weight: 700;
+          margin-right: 10px;
+        }
+        .rank__script {
+          font-size: 1.6rem;
+          font-weight: 500;
+        }
+      }
+      .genre__time {
+        .time__title {
+          font-size: 1.6rem;
+          font-weight: 700;
+          margin-right: 10px;
+        }
+        .time__script {
+          font-size: 1.6rem;
+          font-weight: 500;
+        }
+      }
+    }
+    .script__info {
+      margin-top: 10px;
+      .info__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+      .info__script {
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    }
+    .script__category {
+      margin-top: 10px;
+      .category__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+      .category__script {
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+.trailer{
+  margin-top: 40px ;
+  .trailer__title{
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .trailer__content{
+    font-size: 14px;
+    margin-top: 15px;
+  }
+}

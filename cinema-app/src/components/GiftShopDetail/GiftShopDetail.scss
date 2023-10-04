@@ -1,0 +1,153 @@
+.gift__detail {
+  background-color: rgb(249, 246, 236);
+  padding: 3rem 0;
+  .gift__detail__container {
+    border-top: 2px solid black;
+    margin-top: 3rem !important;
+    background-color: #fff;
+    .gift__detail__content {
+      .gift__detail__content__img {
+        display: flex;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .gift__detail__descrpition {
+        margin-left: 3rem;
+        .description {
+          font-size: 1.4rem;
+          font-weight: 700;
+          .description-white {
+            font-weight: 500;
+            margin-left: 5rem;
+          }
+        }
+      }
+      .guide {
+        margin-top: 3rem;
+        margin-left: 3rem;
+        .guide__title {
+          font-size: 2rem;
+          font-weight: 700;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          display: flex;
+          justify-content: center;
+          border-bottom: 1px solid rgb(204, 204, 204);
+        }
+        .guide__detail {
+          .guide__left {
+            text-align: center;
+          }
+          .guide__left,
+          .guide__right {
+            border-bottom: 1px solid rgb(204, 204, 204);
+            padding: 1rem 0;
+          }
+        }
+      }
+    }
+    .detail__and__payment {
+      position: sticky;
+      top: 0;
+      .title {
+        h3 {
+          font-size: 3rem;
+          font-weight: 700;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+          padding-bottom: 2rem;
+          border-bottom: 1px solid rgb(204, 204, 204);
+        }
+      }
+      .price {
+        position: relative;
+        .price__title {
+          font-size: 1.6rem;
+          font-weight: 700;
+          .price-amout {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: red;
+            margin-left: 1rem;
+            right: 10rem;
+            position: absolute;
+          }
+        }
+      }
+      .counter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 10rem 0 0;
+        background-color: rgb(249, 246, 236);
+        .counter__title {
+          font-size: 1.6rem;
+          font-weight: 700;
+        }
+        .counter__number {
+          font-size: 1.6rem;
+          font-weight: 700;
+          height: 3rem;
+          width: 8rem;
+          padding: 0.5rem 1rem;
+          background-color: #fff;
+          border: 1px solid rgb(204, 204, 204);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .counter__box {
+          padding: 0.5rem 1rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .counter__btn {
+            border: 1px solid rgb(204, 204, 204);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            height: 3rem;
+            width: 3rem;
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+          }
+          .counter__btn:hover {
+            background-color: rgb(204, 204, 204);
+          }
+        }
+      }
+      .amout {
+        margin: 3rem 0;
+        span {
+          font-size: 2.4rem;
+          font-weight: 700;
+        }
+        .amout__number {
+          font-size: 2.4rem;
+          font-weight: 700;
+          color: red;
+          margin-left: 10.4rem;
+        }
+      }
+      .button__group {
+        .button__group__btn {
+          width: 37%;
+          height: 5rem;
+          font-size: 1.6rem;
+          font-weight: 700;
+          border: none;
+          margin-left: 1rem;
+          background-color: rgb(76, 76, 76);
+          color: #fff;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(204, 204, 204);
+          }
+        }
+      }
+    }
+  }
+}

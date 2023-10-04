@@ -1,0 +1,135 @@
+$bannerPartWidth: 1115px;
+$bannerPartHeight: 645px;
+.container {
+  overflow: visible;
+  height: max-content;
+  position: relative;
+  padding-bottom: $bannerPartHeight;
+  transition: all 0.5s ease-in-out;
+}
+.left {
+  display: flex;
+  width: $bannerPartWidth;
+  position: absolute;
+  height: $bannerPartHeight;
+  top: 0;
+  right: 500px;
+  .left__image__ctn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    .left-image {
+      position: relative;
+      transform: translateX(-100%);
+      flex: 0 0 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      gap: 15px;
+      padding: 200px 0 10px;
+      transition: transform 0.5s ease-in-out;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: flex 0.5s ease;
+    }
+  }
+}
+.middle {
+  width: 315px;
+  height: $bannerPartHeight;
+  position: absolute;
+  z-index: 10;
+  left: 685px;
+  display: flex;
+  flex-direction: column;
+  .middle__title {
+    text-align: center;
+    padding: 20px;
+    color: #d5ca96;
+    background-color: #555;
+    margin-bottom: 20px;
+  }
+  .list__film {
+    flex-grow: 1;
+    .film__row {
+      display: flex;
+      border: #fff 3px solid;
+      padding: 15px 5px;
+      .film__name {
+        font-weight: 700;
+        flex: 5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-wrap: nowrap;
+      }
+      .film__info {
+        flex: 5;
+        text-align: end;
+        color: #666;
+      }
+    }
+    .film__row:hover {
+      border: #cdc197 3px solid;
+    }
+  }
+  .buyTicket {
+    background-color: #ee1c25;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+  }
+}
+.right {
+  display: flex;
+  width: $bannerPartWidth;
+  position: absolute;
+  height: $bannerPartHeight;
+  top: 0;
+  left: 1015px;
+  .right__image__ctn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    .right-image {
+      position: relative;
+      flex: 0 0 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      gap: 15px;
+      padding: 200px 0 10px;
+      transition: transform 0.5s ease-in-out;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: flex 0.5s ease;
+    }
+  }
+}
+.control__buttons {
+  position: relative;
+  bottom: calc($bannerPartWidth / 3);
+  display: flex;
+  margin: auto;
+  width: 1200px;
+  justify-content: space-between;
+  pointer-events: none;
+  button {
+    background-color: inherit;
+    border: none;
+    pointer-events: auto;
+    .material-symbols-outlined {
+      font-size: 60px;
+      color: white;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+  }
+}

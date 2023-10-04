@@ -1,0 +1,23 @@
+hr{
+    border-top: 1px solid #ebebec;
+    margin: 20px 0;
+}
+.comment{
+    .user__name{
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    .rating{
+        font-size: 1.8rem;
+    }
+    .comment__content{
+        font-size: 1.4rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .time{
+        font-size: 1.4rem;
+        color: #a5a5a5;
+    }
+}

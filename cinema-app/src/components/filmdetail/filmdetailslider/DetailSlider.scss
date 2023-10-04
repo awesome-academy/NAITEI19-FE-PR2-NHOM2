@@ -1,0 +1,16 @@
+.slider__detail {
+  margin-bottom: 50px;
+  .slider__component {
+    background-color: #000;
+    .slider__mother {
+      margin-bottom: 10px;
+    }
+  }
+}
+.slider__child {
+  img {
+    max-width: 92%; /* Điều chỉnh chiều rộng tối đa */
+    width: auto; /* Cho phép ảnh thay đổi chiều rộng tự động */
+    height: auto; /* Cho phép ảnh thay đổi chiều cao tự động */
+  }
+}
