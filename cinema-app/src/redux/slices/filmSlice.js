@@ -7,7 +7,7 @@ const filmSLice = createSlice({
     initialState,
     reducers: {
         setFilm: (state, action) => {
-            return { currentFilm: action.payload };
+            state.currentFilm = action.payload;
         },
         clearFilm: () => {
             return { currentFilm: {} };
