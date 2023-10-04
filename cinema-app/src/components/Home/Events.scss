@@ -1,0 +1,53 @@
+@import url("https://fonts.cdnfonts.com/css/linux-libertine");
+@import "../../Styles.scss";
+$gridGap: 20px;
+.event {
+  h3 {
+    font-size: 40px;
+    font-style: italic;
+    font-family: "Linux Libertine", sans-serif;
+    font-weight: 550;
+    text-align: center;
+    padding: 30px;
+  }
+  .event__grid {
+    display: flex;
+    width: $max-page-width;
+    gap: $gridGap;
+    margin: auto;
+    justify-content: center;
+    .event__image {
+      position: relative;
+      width: 315px;
+      img {
+        width: 100%;
+      }
+    }
+    .col__12 {
+      display: flex;
+      flex-direction: column;
+      gap: calc($gridGap + 10px);
+      .row__12 {
+        display: flex;
+        flex-direction: row;
+        gap: $gridGap;
+        .col__1,
+        .col__2 {
+          display: flex;
+          flex-direction: column;
+          gap: $gridGap;
+        }
+      }
+      .row__3 {
+        .event__image {
+          width: 650px;
+        }
+      }
+    }
+    .col__3 {
+      display: flex;
+      flex-direction: column;
+      gap: $gridGap;
+    }
+  }
+}

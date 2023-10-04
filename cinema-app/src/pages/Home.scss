@@ -1,0 +1,37 @@
+@import "../Styles.scss";
+.sns__link__ctn {
+  display: flex;
+  margin: 50px auto;
+  width: $max-page-width;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.film__list__slider {
+  display: flex;
+  width: 1030px;
+  margin: auto;
+  gap: 20px;
+}
+.pagination-buttons {
+  position: relative;
+  top: -155px;
+  width: 1200px;
+  margin: auto;
+  justify-content: space-between;
+  button {
+    border: none;
+    background: inherit;
+    .material-symbols-outlined {
+      font-size: 48px;
+    }
+  }
+  #prevBtn {
+    position: absolute;
+    left: 0;
+  }
+  #nextBtn {
+    position: absolute;
+    right: 0;
+  }
+}

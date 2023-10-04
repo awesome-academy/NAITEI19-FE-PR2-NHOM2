@@ -1,0 +1,316 @@
+@import "../../Styles.scss";
+a {
+    text-decoration: none;
+    color: #555;
+}
+.navbar-address{
+    background-color: #dad2b4;
+    width:  100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: -20px;
+    .navbar-item{
+        padding: 5px 20px;
+    }
+}
+.cinema-container{
+    width: 100%;
+    min-height: 100px;
+    padding: 0 0 50px;
+    background: #f9f6ec;
+}
+.cinema-container__detail{
+    width: 980px;
+    min-height: 100px;
+    margin: 0 auto;
+}
+.cinema-body{
+width: 100%;
+position: absolute;
+}
+.cinema-slider{
+    width: 100%;
+}
+ul{
+    list-style: none;
+    padding: 20px;
+}
+.btn_moive {
+    display: block;
+    border: 1px solid #e5e5e5;
+    line-height: 28px;
+    margin-right: 15px;
+}
+.btn_moive em {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    padding-left: 15px;
+    background: url(https://www.lottecinemavn.com/LCHS/Image/Icon/icon_favorite.gif) no-repeat left center;
+}
+.btn_moive span {
+    display: inline-block;
+    width: 29px;
+    height: 28px;
+    font-size: 0;
+    background: url(https://www.lottecinemavn.com/LCHS/Image/btn/btn_s_minus03.gif) no-repeat 0 0;
+    vertical-align: top;
+}
+.cinema-infor{
+    display: flex;
+    align-items: center;
+}
+.cinema-infor ul{
+    display: flex;
+}
+.cinema-infor li {
+    background-color: #fff;
+}
+.btn_fee {
+    display: block;
+    border: 1px solid #e5e5e5;
+    line-height: 28px;
+    padding: 0px 5px;
+}
+.m_inner_new .sub_addr2 em {
+    padding-left: 10px;
+    margin-left: 10px;
+}
+.p_seat {
+    margin-left: 21px;
+    font-weight: bold;
+}
+.p_theater{
+    margin-right: 20px;
+    font-weight: bold;
+}
+#emTotalScreenCount{
+    margin-right: 15px;
+}
+#emTotalSeatCount{
+    margin-right: 15px;
+}
+.c_fixed .bg_fixed {
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+    top: 0px;
+}
+.tab_st07 {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-left: 0px;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+.cont_cinema_Area .tab_st07 li {
+    width: 25%;
+    float: left;
+}
+.tab_st07 li.on a {
+    position: relative;
+    background: #cdc197;
+    border-color: #cdc197;
+    z-index: 1;
+    font-weight: bold;
+}
+.tab_st07 li a {
+    display: block;
+    width: 197px;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #c0c0c0;
+    border-left: none;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    color: #231f20;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.cinema-schedule {
+    background-color: #fff;
+    width: 980px;
+    min-height: 100px;
+    margin: 0 auto;
+}
+.cinema_grad{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 15px 0;
+    margin-top: 20px;
+    border-bottom: 1px solid #dedede;
+    background: #fff;
+}
+.cinema_grad li {
+    min-width: 150px;
+    padding-left: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+.cinema_grad li span {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: -0.5px;
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+}
+.grade_all {
+    background: url(https://www.lottecinemavn.com/LCHS/Image/Bg/P.png) no-repeat 0 0;
+}
+.grade_13 {
+    background: url(https://www.lottecinemavn.com/LCHS/Image/Bg/13.png) no-repeat 0 0;
+}
+.grade_16 {
+    background: url(https://www.lottecinemavn.com/LCHS/Image/Bg/16.png) no-repeat 0 0;
+}
+.grade_18 {
+    background: url(https://www.lottecinemavn.com/LCHS/Image/Bg/18.png) no-repeat 0 0;
+}
+.time_aType .time_line dt .btn_detail {
+    margin-left: 10px;
+}
+.time_aType .time_line {
+    padding: 100px 20px 30px;
+}
+.time_aType .time_line:first-child{
+    padding: 0px 20px 30px;
+}
+element.style {
+}
+.cinema_grad + .time_inner .time_aType .time_line dt {
+    padding-top: 20px;
+    margin-top: 0;
+}
+.time_aType .time_line dt {
+    padding: 30px 0 0;
+    // margin-top: 150px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #231f20;
+    background: none;
+}
+.time_line dd .cineD1 li {
+    float: left;
+    padding: 0 7px 0 8px;
+    margin: 0;
+    color: #666;
+    background: url(https://www.lottecinemavn.com/LCHS/Image/bg/bg_line08.gif) no-repeat left 1px;
+}
+.time_line dd .theater_time li a {
+    display: block;
+}
+.time_line dd .theater_time li .cineD2 {
+    display: block;
+    height: 21px;
+    line-height: 21px;
+    color: #666;
+    border-bottom: 1px solid #e5e5e5;
+}
+.time_line dd .theater_time li .clock {
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 15px;
+    color: #666;
+    font-weight: bold;
+}
+.time_line dd .theater_time li .ppNum {
+    display: block;
+    height: 19px;
+    line-height: 19px;
+    color: #666;
+    font-size: 12px;
+}
+a {
+    text-decoration: none;
+    color: #555;
+}
+.time_line dd .theater_time li {
+    float: left;
+    width: 115px;
+    margin: 22px 0 0;
+    background: #fff;
+    border: 1px solid #ebeaea;
+    text-align: center;
+    margin-right: -1px;
+    text-align: center;
+}
+.time_line dd .theater_time li:hover{
+    background-color: rgb(113 104 104 / 58%);
+    color: #6b5c5c;
+}
+.map_cont {
+    width: 980px;
+    margin: 0 auto;
+    padding: 50px 0 0 0;
+}
+.map_tit {
+    display: inline-block;
+    padding: 0 0 20px 0;
+    font-size: 22px;
+    color: #231f20;
+}
+.map_cont .contectmap {
+    position: relative;
+    overflow: hidden;
+}
+.map_cont .contectmap div.site > span {
+    display: table-cell;
+    padding: 0 20px;
+    vertical-align: middle;
+}
+.trafficTit {
+    padding: 0 0 10px 0;
+    font-size: 18px;
+    color: #231f20;
+    font-weight: 500;
+}
+.trafficATb {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #999;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.trafficATb tbody th {
+    vertical-align: middle;
+    border: 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #dedede;
+    font-size: 14px;
+    color: #231f20;
+    text-align: center;
+}
+.trafficATb tbody th .car {
+    padding: 34px 0 0 0;
+    background: url(https://www.lottecinemavn.com/LCHS/Image/Icon/icon_car.png) no-repeat center top;
+}
+.trafficATb tbody th .parking {
+    padding: 43px 0 0 0;
+    background: url(https://www.lottecinemavn.com/LCHS/Image/Icon/icon_pkLotinfo.png) no-repeat center top;
+}
+.trafficMemo {
+    padding: 15px;
+}
+#cinemaAddress{
+    background-color: #b8b8b8;
+    padding: 15px;
+    width: 980px;
+    margin-top: 0px;
+}
+
