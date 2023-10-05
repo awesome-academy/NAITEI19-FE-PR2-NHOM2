@@ -13,7 +13,7 @@ export const register = createAsyncThunk(
         phonenumber
       );
       thunkAPI.dispatch(setMessage(response.data?.EM));
-      return response.data;
+      return response;
     } catch (error) {
       const message =
         (error.response &&
@@ -34,7 +34,7 @@ export const login = createAsyncThunk(
       if (data?.EC !== 200) {
         thunkAPI.dispatch(setMessage(data?.EM));
       }
-      return data?.DT;
+      return data;
     } catch (error) {
       const message =
         (error.response &&

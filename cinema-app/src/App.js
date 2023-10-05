@@ -15,6 +15,7 @@ import GiftShopDetailPage from "./pages/GiftShopDetail";
 import Order from "./pages/Order";
 import HistoryPage from "./pages/HistoryPage";
 import Payment from "./pages/Payment";
+import LogoutPage from "./pages/LogoutPage";
 function App() {
   return (
     <Routes>
@@ -35,8 +36,9 @@ function App() {
       <Route path="/gift-shop-detail" element={<GiftShopDetailPage />}></Route>
       <Route path="/ticket" element={<Order />}></Route>
       <Route path="/history" element={<HistoryPage />}></Route>
-      <Route path="/payment" element={<Payment />} />
+      <Route path="/logout" element={<LogoutPage />}></Route>
     </Routes>
-  );
+      
+  );  
 }
 export default App;

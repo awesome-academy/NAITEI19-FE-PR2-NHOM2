@@ -4,6 +4,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { login } from "../../../redux/slices/auth";
 import { clearMessage } from "../../../redux/slices/message";
+import {toast} from "react-toastify";
 import "./Login.scss";
 const Login = () => {
   let navigate = useNavigate();
@@ -18,6 +19,19 @@ const Login = () => {
     email: "",
     password: "",
   };
+  useEffect(() => {
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (user?.role) {
+      if (user?.role === 1) {
+        navigate("/admin/user");
+      } else if (user?.role === 2) {
+        navigate("/");
+        toast.success("Đăng nhập thành công");
+      } else {
+        navigate("/login");
+      }
+    }
+  }, [isLoggedIn, navigate]);
   const handleLogin = (formValue) => {
     const { email, password } = formValue;
     setLoading(true);
@@ -25,13 +39,20 @@ const Login = () => {
       .unwrap()
       .then((data) => {
         // navigate("/profile");
-        console.log("324234", data);
         if (+data?.EC === 200) {
-          if (data?.role === 1) {
+          if (data?.DT.role === 1) {
             navigate("/admin/user");
-          } else {
+          } else if (data?.DT.role === 2) {
+            if (data?.DT.status === 0) {
+              toast.error("Tài khoản của bạn đã bị khóa");
+              return;
+            }
             navigate("/");
+          } else {
+            navigate("/login");
           }
+        }else{
+          toast.error(data?.EM);
         }
         //window.location.reload();
       })
@@ -39,14 +60,7 @@ const Login = () => {
         setLoading(false);
       });
   };
-  if (isLoggedIn) {
-    //get user role
-    let userRole = JSON.parse(localStorage.getItem("user")).role;
-    if (userRole === 1) {
-      return <Navigate to="/admin/user" />;
-    }
-    return <Navigate to="/" />;
-  }
+
   return (
     <div className="col-md-12 login-form">
       <div className="card card-container">
@@ -83,14 +97,7 @@ const Login = () => {
                 />
               </div>
               <div className="form-group">
-                <button
-                  type="submit"
-                  className="btn  btn-block"
-                  disabled={loading}
-                >
-                  {loading && (
-                    <span className="spinner-border spinner-border-sm"></span>
-                  )}
+                <button type="submit" className="btn  btn-block">
                   <span>Đăng nhập</span>
                 </button>
               </div>
@@ -104,13 +111,6 @@ const Login = () => {
             alt=""
           />
         </div>
-        {message && (
-          <div className="form-group">
-            <div className="alert alert-danger" role="alert">
-              {message}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

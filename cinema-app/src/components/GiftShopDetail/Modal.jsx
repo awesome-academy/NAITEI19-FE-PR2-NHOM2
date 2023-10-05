@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./Modal.scss";
 import { createTransaction } from "../../services/historyService";
+import { toast } from "react-toastify";
 export default function Modal({ trigger, setTrigger, data }) {
   const handleTransaction = async () => {
     let user = JSON.parse(localStorage.getItem("user"));
@@ -8,15 +9,24 @@ export default function Modal({ trigger, setTrigger, data }) {
       name: data?.name,
       idUser: user?.id,
       price: data?.price,
-      count: data?.count,
-      totalPayment: data?.price * data?.count,
+      quantity: data?.count,
+      totalPrice: data?.price * data?.count,
       seat: "A1",
       createAt: new Date(),
       screen: "screen2",
       imgUrl: data?.imgUrl,
     };
     try {
+      let user = JSON.parse(localStorage.getItem("user"));
+      if (!user) {
+        toast.error("Bạn cần đăng nhập để thanh toán");
+        return;
+      }
       const res = await createTransaction(transaction);
+      if (res?.EC === 200) {
+        toast.success("Thanh toán thành công");
+        setTrigger(false);
+      }
       console.log(res);
     } catch (error) {
       console.log(error);
