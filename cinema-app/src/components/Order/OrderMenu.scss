@@ -1,0 +1,118 @@
+@import "../../Styles.scss";
+.order__menu__main {
+  width: 1000px;
+  height: 550px;
+  display: flex;
+  margin: auto;
+  .left__area {
+    flex: 1;
+    flex-grow: 5;
+    .theater__ctn {
+      display: flex;
+      gap: 15px;
+      .theater__btn,
+      .area__btn {
+        border: none;
+        width: 120px;
+        height: 50px;
+        font-size: 12px;
+      }
+      .area__list__ctn {
+        width: 180px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 10px;
+        .area__btn {
+          width: 100%;
+          color: #666;
+          background-color: #fff;
+        }
+        .active {
+          background-color: #231f20;
+          color: #fff;
+        }
+      }
+      .theater__list__ctn {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        height: min-content;
+        gap: 15px;
+        .theater__btn {
+          color: #666;
+          background-color: #efefef;
+        }
+        .active {
+          background-color: #fff;
+          color: #000;
+          border: solid 1px #000;
+        }
+      }
+    }
+  }
+
+  .right__area {
+    flex: 1;
+    flex-grow: 3;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    .film__list__ctn {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .film__info {
+        width: 175px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px;
+        gap: 10px;
+        width: 100%;
+        gap: 3px;
+        .age__restrict__label {
+          font-size: 14px;
+          color: #fff;
+          font-weight: 600;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          width: 25px;
+          height: 25px;
+        }
+        .age__0 {
+          background-color: #088210;
+        }
+        .age__13 {
+          background-color: #246ed8;
+        }
+        .age__16 {
+          background-color: #c60672;
+        }
+        .age__18 {
+          background-color: #e80808;
+        }
+        .name {
+          font-weight: 600;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+.showtime {
+  width: 1000px;
+  margin: auto;
+  .calendar__film__title {
+    width: 100%;
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,46 @@
+@import "../../Styles.scss";
+.calendar__film__title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #efebdb;
+  width: $max-page-width;
+  margin: 20px;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 24px;
+  .age__restrict__label {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+  }
+  .age__0 {
+    background-color: #088210;
+  }
+  .age__13 {
+    background-color: #246ed8;
+  }
+  .age__16 {
+    background-color: #c60672;
+  }
+  .age__18 {
+    background-color: #e80808;
+  }
+  button {
+    font-size: 14px;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: #666 1px solid;
+    .material-symbols-outlined {
+      font-size: 14px;
+    }
+  }
+}
