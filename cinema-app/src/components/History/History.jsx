@@ -84,7 +84,7 @@ export default function History() {
               ))}
           </div>
           <div>
-            <h3>Tổng tiền: {Math.floor(getAmount() * 1.1).toLocaleString()}</h3>
+            <h3>Tổng tiền: {Math.floor(getAmount()).toLocaleString()}</h3>
           </div>
         </div>
       </section>

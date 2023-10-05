@@ -4,6 +4,7 @@ import { useState } from "react";
 import ListComment from "./ListComment/ListComment";
 import { useSelector } from "react-redux";
 import { createComment } from "../../services/commentServices";
+import { toast } from "react-toastify";
 export default function Comment() {
   const filmId = useSelector((state) => state.film.currentFilm.id);
   const [rating, setRating] = useState(5);
@@ -20,13 +21,18 @@ export default function Comment() {
   };
   const handleSubmit = async () => {
     if (!comment) return;
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (!user?.role) {
+      toast.error("Bạn cần đăng nhập để bình luận");
+      return;
+    }
     let data = {
       showingId: filmId,
       rating: rating * 2,
       comment: comment,
       createdAt: new Date(),
       updatedAt: new Date(),
-      userId: 101,
+      userId: JSON.parse(localStorage.getItem("user")).id,
     };
     try {
       const res = await createComment(data);

@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 function Navbar() {
-  let user = {};
+  let user = JSON.parse(localStorage.getItem("user"));
   useEffect(() => {
     user = JSON.parse(localStorage.getItem("user"));
-    console.log(user); 
+    console.log(user);
   }, []);
 
   return (
@@ -36,8 +36,11 @@ function Navbar() {
           </Link>
         </div>
         <div className="navbar__primary__right">
-          {user ? (
-            <Link to={"/history"}>Xin chào {user?.username}</Link>
+          { user?.role ? (
+            <>
+              <Link to={"/history"}>Lịch sử giao dịch</Link>
+              <Link to={"/logout"}>Đăng xuất</Link>
+            </>
           ) : (
             <>
               <Link to={"/login"}>Đăng nhập</Link>

@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { register } from "../../../redux/slices/auth";
 import { clearMessage } from "../../../redux/slices/message";
-import "./Register.scss"
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import "./Register.scss";
 const Register = () => {
   const [successful, setSuccessful] = useState(false);
   const { message } = useSelector((state) => state.message);
+  let navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(clearMessage());
@@ -21,11 +24,41 @@ const Register = () => {
   };
   const handleRegister = (formValue) => {
     const { username, email, password, phonenumber } = formValue;
+    if (
+      username === "" ||
+      email === "" ||
+      password === "" ||
+      phonenumber === ""
+    ) {
+      toast.error("Vui lòng nhập đầy đủ thông tin");
+      return;
+    }
+    //viet nam regex
+    const regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+    if (!regex.test(phonenumber)) {
+      toast.error("Số điện thoại không hợp lệ");
+      return;
+    }
+    if (password.length < 6) {
+      toast.error("Mật khẩu phải có ít nhất 6 ký tự");
+      return;
+    }
+    if (password !== formValue.passwordAgain) {
+      toast.error("Mật khẩu không khớp");
+      return;
+    }
     setSuccessful(false);
     dispatch(register({ username, email, password, phonenumber }))
       .unwrap()
-      .then(() => {
+      .then((data) => {
         setSuccessful(true);
+        if (+data?.EC === 200) {
+          toast.success(data?.EM);
+          navigate("/login");
+        } else {
+          toast.error(data?.EM);
+          //set formValue = "";
+        }
       })
       .catch(() => {
         setSuccessful(false);
@@ -34,13 +67,12 @@ const Register = () => {
   return (
     <div className="col-md-12 signup-form">
       <div className="card card-container">
-      <div className="card-body">
-        <div className="login_label">
-          <h3>Đăng ký</h3>
-        </div>
-        <Formik initialValues={initialValues} onSubmit={handleRegister}>
-          <Form>
-            {!successful && (
+        <div className="card-body">
+          <div className="login_label">
+            <h3>Đăng ký</h3>
+          </div>
+          <Formik initialValues={initialValues} onSubmit={handleRegister}>
+            <Form>
               <div>
                 <div className="form-group">
                   <label htmlFor="username">Tài khoản</label>
@@ -89,9 +121,7 @@ const Register = () => {
                   />
                 </div>
                 <div className="phone">
-                  <label htmlFor="phonenumber">
-                    Số điện thoại
-                  </label>
+                  <label htmlFor="phonenumber">Số điện thoại</label>
                   <Field
                     name="phonenumber"
                     type="phonenumber"
@@ -105,32 +135,21 @@ const Register = () => {
                 </div>
                 <div className="form-group">
                   <button type="submit" className="btn  btn-block">
-                   Đăng ký 
+                    Đăng ký
                   </button>
                 </div>
               </div>
-            )}
-          </Form>
-        </Formik>
-      </div>
-      <div className="login-image">
-        <img src="https://media.lottecinemavn.com/Media/WebAdmin/c07918028d7e45c7b50df72dc7531f9a.jpg" alt="" />
-      </div>
-      {message && (
-        <div className="form-group">
-          <div
-            className={
-              successful ? "alert alert-success" : "alert alert-danger"
-            }
-            role="alert"
-          >
-            {message}
-          </div>
+            </Form>
+          </Formik>
         </div>
-      )}
-    </div>
+        <div className="login-image">
+          <img
+            src="https://media.lottecinemavn.com/Media/WebAdmin/c07918028d7e45c7b50df72dc7531f9a.jpg"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
   );
 };
 export default Register;
-
