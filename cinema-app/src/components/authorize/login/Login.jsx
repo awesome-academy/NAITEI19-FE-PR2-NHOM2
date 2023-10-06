@@ -43,7 +43,7 @@ const Login = () => {
           if (data?.DT.role === 1) {
             navigate("/admin/user");
           } else if (data?.DT.role === 2) {
-            if (data?.DT.status === 0) {
+            if (!data?.DT.status) {
               toast.error("Tài khoản của bạn đã bị khóa");
               return;
             }
