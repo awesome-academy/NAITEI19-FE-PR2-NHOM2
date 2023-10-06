@@ -16,6 +16,7 @@ import Order from "./pages/Order";
 import HistoryPage from "./pages/HistoryPage";
 import Payment from "./pages/Payment";
 import LogoutPage from "./pages/LogoutPage";
+import TicketAdmin from "./components/Admin/TicketManagement/TicketAdmin";
 function App() {
   return (
     <Routes>
@@ -28,6 +29,7 @@ function App() {
       <Route path="/detail" element={<FilmDetailPage />}></Route>
       <Route path="/admin/user" element={<UserAdminPage />}></Route>
       <Route path="/admin/film" element={<FilmAdminPage />}></Route>
+      <Route path="/admin/ticket" element={<TicketAdmin/>}></Route>
       <Route path="/movie-list" element={<FilmPage />}></Route>
       <Route path="/detail" element={<FilmDetailPage />}></Route>
       <Route path="/event" element={<TicketPage />}></Route>

@@ -1,16 +1,18 @@
 import "./FilmManagement.scss";
-import * as React from 'react'
-import { DataGrid } from '@mui/x-data-grid';
+import * as React from "react";
+import { DataGrid } from "@mui/x-data-grid";
 import { userRows } from "../../../dummyData";
 import { useState } from "react";
-import { useFormik } from 'formik';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import axios from 'axios';
+import { useFormik } from "formik";
+import Box from "@mui/material/Box";
+import { TextField, Stack } from "@mui/material";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import axios from "axios";
+import Grid from '@mui/material/Grid';
+import { Formik, Field, Form, ErrorMessage } from "formik";
 export default function FilmList() {
-  const [data, setData] = useState(userRows); 
+  const [data, setData] = useState(userRows);
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
@@ -19,39 +21,52 @@ export default function FilmList() {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event.key === 'Escape') {
-      setState({ ...state, [anchor]: open });
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
     }
-    setState({ ...state, [anchor]: true})
-    console.log(state)
+
+    setState({ ...state, [anchor]: open });
   };
-  
+
   const formik = useFormik({
     initialValues: {
-      name: '',
-      time: '',
-      timeStart: '',
+      name: "",
+      time: "",
+      timeStart: "",
       genre: [],
       category: [],
-      description: '',
-      imgUrl : '',
-      age : ''
+      description: "",
+      imgUrl: "",
+      age: "",
     },
     onSubmit: (values) => {
-      console.log(formik)
+      console.log(formik);
       // Gửi dữ liệu lên server bằng axios
-      axios.post('/api/your-endpoint', values)
+      axios
+        .post("/api/your-endpoint", values)
         .then((response) => {
-          console.log('Dữ liệu đã được gửi thành công:', response.data);
+          console.log("Dữ liệu đã được gửi thành công:", response.data);
           // Đóng drawer sau khi gửi thành công
-          toggleDrawer('bottom', false)();
+          toggleDrawer("bottom", false)();
         })
         .catch((error) => {
-          console.error('Lỗi khi gửi dữ liệu:', error);
+          console.error("Lỗi khi gửi dữ liệu:", error);
         });
     },
   });
   const list = (anchor) => (
+    <Grid
+  container
+  spacing={0}
+  direction="column"
+  alignItems="center"
+  justify="center"
+  style={{ minHeight: '100vh' }}
+>
+  <Grid item xs={3}>
     <Box
       sx={{ width: 250 }}
       role="presentation"
@@ -59,45 +74,35 @@ export default function FilmList() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <form onSubmit={formik.handleSubmit}>
+        <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
+          <TextField
+            id="genre"
+            name="genre"
+            label="Thể loại"
+            fullWidth
+            value={formik.values.genre}
+            onChange={formik.handleChange}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <TextField
+            id="name"
+            name="name"
+            label="Tên phim"
+            fullWidth
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </Stack>
         <TextField
-          id="genre"
-          name="genre"
-          label="Thể loại"
-          fullWidth
-          value={formik.values.genre}
+          type="date"
+          variant="outlined"
+          color="secondary"
           onChange={formik.handleChange}
-           onClick={(e) => e.stopPropagation()}
-           
-        />
-        <TextField
-          id="name"
-          name="name"
-          label="Tên phim"
-          fullWidth
-          value={formik.values.name}
-          onChange={formik.handleChange}
-           onClick={(e) => e.stopPropagation()}
-           
-        />
-        <TextField
-          id="showtime"
-          name="time"
-          label="Suất chiếu"
-          fullWidth
-          value={formik.values.time}
-          onChange={formik.handleChange}
-           onClick={(e) => e.stopPropagation()}
-           
-        />
-        <TextField
-          id="showhour"
-          name="showhour"
-          label="Ngày bắt đầu chiếu"
-          fullWidth
           value={formik.values.timeStart}
-          onChange={formik.handleChange}
-           onClick={(e) => e.stopPropagation()}
-           
+          fullWidth
+          required
+          sx={{ mb: 4 }}
         />
         <TextField
           id="cinema"
@@ -106,8 +111,7 @@ export default function FilmList() {
           fullWidth
           value={formik.values.cinema}
           onChange={formik.handleChange}
-           onClick={(e) => e.stopPropagation()}
-           
+          onClick={(e) => e.stopPropagation()}
         />
         <TextField
           id="ticketPrice"
@@ -116,8 +120,7 @@ export default function FilmList() {
           fullWidth
           value={formik.values.ticketPrice}
           onChange={formik.handleChange}
-           onClick={(e) => e.stopPropagation()}
-           
+          onClick={(e) => e.stopPropagation()}
         />
         <TextField
           id="description"
@@ -126,8 +129,7 @@ export default function FilmList() {
           fullWidth
           value={formik.values.description}
           onChange={formik.handleChange}
-           onClick={(e) => e.stopPropagation()}
-           
+          onClick={(e) => e.stopPropagation()}
         />
         <TextField
           id="imgUrl"
@@ -136,8 +138,7 @@ export default function FilmList() {
           fullWidth
           value={formik.values.imgUrl}
           onChange={formik.handleChange}
-           onClick={(e) => e.stopPropagation()}
-           
+          onClick={(e) => e.stopPropagation()}
         />
         <TextField
           id="age"
@@ -146,14 +147,15 @@ export default function FilmList() {
           fullWidth
           value={formik.values.age}
           onChange={formik.handleChange}
-           onClick={(e) => e.stopPropagation()}
-           
+          onClick={(e) => e.stopPropagation()}
         />
         <Button type="submit" variant="contained" color="primary">
           Gửi
         </Button>
       </form>
     </Box>
+    </Grid>
+</Grid>
   );
 
   const columns = [
@@ -183,8 +185,8 @@ export default function FilmList() {
       width: 150,
       renderCell: (params) => {
         return (
-          <>      
-              <button className="userListDelete">Delete</button>
+          <>
+            <button className="userListDelete">Delete</button>
           </>
         );
       },
@@ -193,16 +195,22 @@ export default function FilmList() {
 
   return (
     <div className="userList">
-       <div>
-      <Button onClick={toggleDrawer('bottom', true) } variant="contained" color="success">Create Film</Button>
-      <Drawer
-       anchor="bottom"
-       open={state['bottom']}
-       onClose={toggleDrawer('bottom', false)}
-      >
-        {list('bottom')}
-      </Drawer>
-    </div>
+      <div>
+        <Button
+          onClick={toggleDrawer("bottom", true)}
+          variant="contained"
+          color="success"
+        >
+          Create Film
+        </Button>
+        <Drawer
+          anchor="bottom"
+          open={state["bottom"]}
+          onClose={toggleDrawer("bottom", false)}
+        >
+          {list("bottom")}
+        </Drawer>
+      </div>
       <DataGrid
         rows={data}
         disableSelectionOnClick

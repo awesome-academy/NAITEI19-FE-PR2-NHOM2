@@ -19,6 +19,9 @@ export default function Sidebar() {
               <li className="sidebarListItem">
               <Link to={'/admin/film'}>Films</Link>
               </li>
+              <li className="sidebarListItem">
+              <Link to={'/admin/ticket'}>Ticket</Link>
+              </li>
           </ul>
         </div>
       
