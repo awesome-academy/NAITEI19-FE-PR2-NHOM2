@@ -12,7 +12,7 @@ export default function ListFilm() {
   const getListFilm = async () => {
     try {
       const res = await getShowingFilms(limit, page);
-      setListFilm(res.DT);
+      setListFilm(res.DT.slice(0, 8));
     } catch (error) {
       console.log(error);
     }

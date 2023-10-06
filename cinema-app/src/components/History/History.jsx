@@ -47,10 +47,40 @@ export default function History() {
                     </div>
                     <div className="transaction__info row">
                       <span className="content__left col-lg-2">Ngày mua: </span>
+
                       <span className="content__right">
                         {convert(transaction?.createdAt)}
                       </span>
                       <br />
+                      {transaction?.type === "Ticket" ? (
+                        <>
+                          <span className="content__left col-lg-2">Rạp: </span>
+                          <span className="content__right">
+                            {transaction?.address}
+                          </span>
+                          <br />
+                          <span className="content__left col-lg-2">
+                            Thời gian:{" "}
+                          </span>
+                          <span className="content__right">
+                            {transaction?.time}
+                          </span>
+                          <br />
+                          <span className="content__left col-lg-2">
+                            Phòng:{" "}
+                          </span>
+                          <span className="content__right">
+                            {transaction?.screen}
+                          </span>
+                          <br />
+                          <span className="content__left col-lg-2">Ghế: </span>
+                          <span className="content__right">
+                            {transaction?.seat}
+                          </span>
+                          <br />
+                        </>
+                      ) : null}
+
                       <span className="content__left col-lg-2">
                         Tên sản phẩm:{" "}
                       </span>
@@ -68,6 +98,11 @@ export default function History() {
                       <span className="content__left col-lg-2">Số lượng: </span>
                       <span className="content__right">
                         {transaction?.quantity}
+                      </span>
+                      <br />
+                      <span className="content__left col-lg-2">VAT: </span>
+                      <span className="content__right">
+                       10%
                       </span>
                       <br />
                       <span className="content__left col-lg-2">

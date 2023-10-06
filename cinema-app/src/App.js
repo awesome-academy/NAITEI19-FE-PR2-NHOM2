@@ -39,6 +39,7 @@ function App() {
       <Route path="/ticket" element={<Order />}></Route>
       <Route path="/history" element={<HistoryPage />}></Route>
       <Route path="/logout" element={<LogoutPage />}></Route>
+      <Route path="/payment" element={<Payment />}></Route>
     </Routes>
       
   );  

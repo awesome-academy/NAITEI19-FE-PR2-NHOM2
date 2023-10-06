@@ -5,4 +5,7 @@ const getALlTransaction = (id) => {
 const createTransaction = (data) => {
   return axios.post(`/api/v1/transaction`, data);
 };
-export { getALlTransaction, createTransaction };
+const checkTransaction = (userId, filmId) => {
+  return axios.get(`/api/v1/transaction/check?userId=${userId}&filmId=${filmId}`);
+}
+export { getALlTransaction, createTransaction, checkTransaction };

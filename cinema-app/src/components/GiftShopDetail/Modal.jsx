@@ -15,6 +15,9 @@ export default function Modal({ trigger, setTrigger, data }) {
       createAt: new Date(),
       screen: "screen2",
       imgUrl: data?.imgUrl,
+      address: "Web",
+      type: "Gift",
+      time: "no limit"
     };
     try {
       let user = JSON.parse(localStorage.getItem("user"));
