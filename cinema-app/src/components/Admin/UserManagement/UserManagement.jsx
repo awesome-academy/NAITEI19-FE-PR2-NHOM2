@@ -53,8 +53,6 @@ export default function UserList() {
           <>      
               <button className="userListEdit">Block</button>
               <button className="userListDelete"  onClick={() => handleDelete(params.row.id)}>Delete</button>
-              
-            
           </>
         );
       },
@@ -63,6 +61,7 @@ export default function UserList() {
 
   return (
     <div className="userList">
+      
       <DataGrid
         rows={users}
         disableSelectionOnClick
