@@ -4,14 +4,14 @@ import { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { getAllUsers } from "../../../services/userServices";
 import { useEffect } from "react";
-import { blockUser,deleteUser } from "../../../services/userServices";
+import { blockUser, deleteUser } from "../../../services/userServices";
 export default function UserList() {
   const [data, setData] = useState(userRows);
   const [users, setUsers] = useState([]);
-  const handleDelete =async (id) => {
+  const handleDelete = async (id) => {
     const res = await deleteUser(id);
     if (res.EC === 200) {
-    setUsers(users.filter((item) => item.id !== id));
+      setUsers(users.filter((item) => item.id !== id));
     }
   };
   useEffect(() => {
