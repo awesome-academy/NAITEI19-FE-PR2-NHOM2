@@ -3,9 +3,10 @@ import "./FilmDetail.scss";
 import { useSelector } from "react-redux";
 import Rating from "react-rating";
 import Comment from "../Comment/Comment";
+const {useNavigate} = require("react-router-dom");
 export default function FilmDetail() {
   const filmDetail = useSelector((state) => state.film.currentFilm);
-
+  const navigate = useNavigate();
   return (
     <>
       <DetailSlider />
@@ -16,7 +17,11 @@ export default function FilmDetail() {
               <img src={filmDetail?.imgUrl} alt="film" />
             </div>
             <div className="button__book">
-              <button className="btn">Đặt vé</button>
+              <button className="btn" 
+              onClick={() => {
+                navigate("/ticket");
+              }}
+              >Đặt vé</button>
             </div>
           </div>
           <div className="col-10 detail__script">

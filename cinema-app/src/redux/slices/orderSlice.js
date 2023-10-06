@@ -6,6 +6,8 @@ const initialState = {
   date: null,
   time: null,
   positions: [],
+  screen: "",
+  name: "",
 };
 
 const orderSlice = createSlice({
@@ -33,10 +35,13 @@ const orderSlice = createSlice({
     resetPosition: (state, action) => {
       state.positions = [];
     },
+    setScreen: (state, action) => {
+      state.screen = action.payload;
+    }
   },
 });
 
-export const { setCurrentFilm, setTheater, setDate, setTime, appendPosition, deletePosition, resetPosition } =
+export const { setCurrentFilm, setTheater, setDate, setTime, appendPosition, deletePosition, resetPosition,setScreen } =
   orderSlice.actions;
 
 export default orderSlice.reducer;

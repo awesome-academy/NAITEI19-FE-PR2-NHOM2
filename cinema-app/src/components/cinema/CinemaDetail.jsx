@@ -365,7 +365,7 @@ screen : [{screenName : 'Screen 01',
                         <ul class="theater_time list11236" screendiv="100">
                           {data.screen.map(info =><li>
                             <a
-                              href="javascript:void(0);"
+                              href="/ticket"
                               class="time_active t0"
                             >
                               <span class="cineD2 brand">
