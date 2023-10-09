@@ -1,0 +1,32 @@
+.card-container{
+    padding: 20px;
+    display: flex;
+    border-radius: 15px;
+}
+.login-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f6ec;
+    margin-top: 0px;
+}
+.card-body{
+    padding: 45px 30px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.login_label{
+
+}
+.login-image{
+max-width: 100%;
+
+}
+.image{
+    height: 400px;
+}
+.btn-block:hover{
+    background-color: #1f1d1d7e;
+    color: yellow;
+}

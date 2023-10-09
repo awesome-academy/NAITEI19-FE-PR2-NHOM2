@@ -25,9 +25,9 @@ export default function ListComment(props) {
     const getComment = async () => {
       try {
         const res = await getComments(limit, page, filmId);
+        console.log(res.DT.rows);
         setTotalPage(Math.ceil(+res.DT.count/limit));
         setListComment(res.DT.rows);
-        setPage(1);
       } catch (error) {
         console.log(error);
       }

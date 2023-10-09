@@ -9,7 +9,7 @@ export default function GiftShop() {
     const getGift = async () => {
       try {
         const res = await getAllGift();
-        setListGift(res.DT);
+        setListGift(res.DT.slice(0, 4));
       } catch (error) {
         console.log(error);
       }

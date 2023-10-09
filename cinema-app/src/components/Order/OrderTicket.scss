@@ -1,0 +1,27 @@
+@import "../../Styles.scss";
+
+.ticket__order {
+  cursor: pointer;
+  width: 120px;
+  color: #555;
+  text-align: center;
+  div {
+    background-color: #fff;
+    border: 1px #666 solid;
+  }
+  .time {
+    padding: 10px 0;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+.ticket__order:hover {
+  div {
+    background-color: #231f20;
+  }
+  color: #fff;
+  .time {
+    color: #fff;
+  }
+}

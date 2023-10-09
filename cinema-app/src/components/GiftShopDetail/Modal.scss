@@ -1,0 +1,80 @@
+.modal {
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  max-height: 50%;
+  background-color: rgb(237, 230, 230);
+  display: flex;
+  justify-content: center;
+  .modal__content {
+    width: 100%;
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 3rem;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .transaction {
+      h3 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+      }
+      .price {
+        .price__title {
+          font-size: 1.6rem;
+          font-weight: 700;
+        }
+        .price-amout {
+          font-size: 1.6rem;
+          font-weight: 700;
+          margin-left: 1rem;
+        }
+        .quantity {
+          font-size: 1.6rem;
+          font-weight: 700;
+        }
+        .quantity__number {
+          font-size: 1.6rem;
+          font-weight: 700;
+          margin-left: 1rem;
+        }
+      }
+      .amount {
+        .amount__title {
+          font-size: 1.6rem;
+          font-weight: 700;
+        }
+        .amount__number {
+          font-size: 1.6rem;
+          font-weight: 700;
+          margin-left: 1rem;
+        }
+      }
+    }
+    .button__group {
+      .button__group__btn {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 1rem;
+        border-radius: 5px;
+        border: none;
+        font-size: 1.6rem;
+        font-weight: 700;
+        cursor: pointer;
+        background-color: rgb(255, 255, 255);
+        &:hover {
+          background-color: rgb(76, 76, 76);
+          color: #fff;
+        }
+      }
+    }
+  }
+}

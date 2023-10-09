@@ -4,6 +4,8 @@ import { useState } from "react";
 import ListComment from "./ListComment/ListComment";
 import { useSelector } from "react-redux";
 import { createComment } from "../../services/commentServices";
+import { toast } from "react-toastify";
+import { checkTransaction } from "../../services/historyService";
 export default function Comment() {
   const filmId = useSelector((state) => state.film.currentFilm.id);
   const [rating, setRating] = useState(5);
@@ -18,19 +20,39 @@ export default function Comment() {
     if (rate) setRatesubmit(rate);
     else setRatesubmit(rating);
   };
+  const checkTransactionE = async () => {
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (!user?.role) {
+      toast.error("Bạn cần đăng nhập để bình luận");
+      return;
+    }
+    let res = await checkTransaction(user.id, filmId);
+    console.log(res);
+    if (res.EC === 200) {
+      return true;
+    }
+    toast.error("Bạn cần xem phim để bình luận");
+    return false;
+  };
   const handleSubmit = async () => {
     if (!comment) return;
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (!user?.role) {
+      toast.error("Bạn cần đăng nhập để bình luận");
+      return;
+    }
+    if (!await checkTransactionE()) return;
     let data = {
       showingId: filmId,
       rating: rating * 2,
       comment: comment,
       createdAt: new Date(),
       updatedAt: new Date(),
-      userId: 101,
+      userId: JSON.parse(localStorage.getItem("user")).id,
     };
     try {
       const res = await createComment(data);
-      if(res.EC ===200){
+      if (res.EC === 200) {
         setIsReload(!isReload);
         setComment("");
       }
@@ -75,7 +97,7 @@ export default function Comment() {
         </div>
       </section>
       <hr />
-      <ListComment isReload ={isReload}/>
+      <ListComment isReload={isReload} />
     </>
   );
 }

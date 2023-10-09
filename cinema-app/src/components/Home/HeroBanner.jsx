@@ -68,15 +68,15 @@ function HeroBanner({ listFilm }) {
         nextLeftImageRef.current.style.transition = "none"
         nextLeftImageRef.current.style.transform = `translateX(${-100}%)`
         setLeftImageId((leftImageId + 1) % leftBannerImages.length)
-        setIsButtonClicking(false)
-      }, 550);
+        setTimeout(() => setIsButtonClicking(false), 100)
+      }, 600);
     }
   };
 
   const handleRightClick = () => {
     if (currentSlider === "left") {
       setCurrentSlider("right")
-      ctnRef.current.style.transform = 'translateX(-700px)'
+      ctnRef.current.style.transform = 'translateX(-550px)'
     }
     else if (isButtonClicking === false) {
       setIsButtonClicking(true)
@@ -90,14 +90,14 @@ function HeroBanner({ listFilm }) {
         nextRightImageRef.current.style.transition = "none"
         nextRightImageRef.current.style.transform = `translateX(${0}%)`
         setRightImageId((rightImageId + 1) % maxFilmImages)
-        setIsButtonClicking(false)
-      }, 550);
+        setTimeout(() => setIsButtonClicking(false), 100)
+      }, 600);
     }
   };
 
   return (
     <div className="app">
-      <div className="container" ref={ctnRef}>
+      <div className="hero__ctn" ref={ctnRef}>
         <div className="left"  >
           {isLoading ? (
             <p>Loading...</p>
@@ -113,7 +113,7 @@ function HeroBanner({ listFilm }) {
           <div className='list__film'>
             {listFilm.slice(0, maxFilmImages).map((e, id) => (
               <div className='film__row' key={id}>
-                <div className='film__name' ><a href={`film/${e.id}`}>{id + 1}.{e.name}</a></div>
+                <div className='film__name' ><a href="/detail">{id + 1}.{e.name}</a></div>
                 <div className='film__info' >
                   {e.time}Phút | {e.timeStart}
                 </div>

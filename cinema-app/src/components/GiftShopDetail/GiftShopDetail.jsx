@@ -2,15 +2,17 @@ import "./GiftShopDetail.scss";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Modal from "./Modal";
 export default function GiftShopDetail() {
   const gift = useSelector((state) => state.ticket.currentGift);
+  const [trigger, setTrigger] = useState(false);
   const navigate = useNavigate();
   const formatMoney = (money) => {
     return money.toLocaleString();
   };
   const backHandle = () => {
     navigate("/gift-shop");
-    };
+  };
   const [count, setCount] = useState(10);
   return (
     <>
@@ -94,7 +96,10 @@ export default function GiftShopDetail() {
               </div>
               <div className="price">
                 <span className="price__title">
-                  Giá bán online <span className="price-amout">{formatMoney(gift?.price)}₫</span>
+                  Giá bán online{" "}
+                  <span className="price-amout">
+                    {formatMoney(gift?.price)}₫
+                  </span>
                 </span>
               </div>
               <div className="counter">
@@ -122,14 +127,25 @@ export default function GiftShopDetail() {
                 </span>
               </div>
               <div className="button__group">
-                <button className="button__group__btn" onClick={backHandle}>Quay lại</button>
-                <button className="button__group__btn">Mua ngay</button>
+                <button className="button__group__btn" onClick={backHandle}>
+                  Quay lại
+                </button>
+                <button
+                  className="button__group__btn"
+                  onClick={() => setTrigger(true)}
+                >
+                  Mua ngay
+                </button>
               </div>
             </div>
           </div>
         </div>
+        <Modal
+          trigger={trigger}
+          setTrigger={setTrigger}
+          data={{ ...gift, count: count }}
+        />
       </section>
-      c
     </>
   );
 }

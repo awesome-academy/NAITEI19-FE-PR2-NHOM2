@@ -1,7 +1,16 @@
 import axios from "../setup/axios";
-const login = (email, password) => {
-  return axios.post("/api/v1/login", { email, password });
+const blockUser = (id) => {
+  return axios.put(`/api/v1/user?id=${id}`);
 };
-const register = (email, password, name) => {
-  return axios.post("/api/v1/register", { email, password, name });
+const getAllUsers = () => {
+  return axios.get("/api/v1/user");
 };
+const deleteUser = (id) => {
+  return axios.post(`/api/v1/user?id=${id}`);
+}
+export {
+  getAllUsers,
+  blockUser,
+  deleteUser
+}
+

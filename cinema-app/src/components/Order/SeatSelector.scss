@@ -1,0 +1,40 @@
+.seat__selector {
+  width: 1000px;
+  margin: auto;
+  .screen {
+    background-color: #888;
+    padding: 10px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .seat__map {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .__row {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      .row__name {
+        width: 20px;
+        margin-left: -60px;
+      }
+      .seat__row {
+        display: flex;
+        gap: 5px;
+        .seat {
+          width: 30px;
+          text-align: center;
+          background-color: #e6e6e6;
+          cursor: pointer;
+        }
+        .selected {
+          color: #e6e6e6;
+          background-color: #888;
+        }
+      }
+    }
+  }
+}

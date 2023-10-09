@@ -1,24 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userSlice from "./slices/userSlice";
+import authReducer from "../redux/slices/auth";
+import messageReducer from "../redux/slices/message";
 import filmSlice from "./slices/filmSlice";
 import ticketSlice from "./slices/ticketSlice";
-import storage from "redux-persist/lib/storage";
-import { persistReducer, persistStore } from "redux-persist";
-import thunk from "redux-thunk";
+import orderSlice from "./slices/orderSlice";
 
-const persistConfig = {
-  key: "root",
-  storage,
+const reducer = {
+  auth: authReducer,
+  message: messageReducer,
+  film: filmSlice,
+  ticket: ticketSlice,
+  order: orderSlice,
 };
-const user = persistReducer(persistConfig, userSlice);
-const film = persistReducer(persistConfig, filmSlice);
-const ticket = persistReducer(persistConfig, ticketSlice);
-export const store = configureStore({
-  reducer: {
-    user,
-    film,
-    ticket,
-  },
-  middleware: [thunk],
+const store = configureStore({
+  reducer: reducer,
+  devTools: true,
 });
-export const persistor = persistStore(store);
+export default store;

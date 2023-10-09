@@ -1,0 +1,54 @@
+.payment__ctn {
+  margin-top: 30px;
+  background-color: #33373a;
+  .payment__info {
+    display: flex;
+    width: 1000px;
+    margin: auto;
+    .info__type {
+      color: #cdc197;
+    }
+    .payment__film__info {
+      flex: 1;
+      .info__ctn {
+        display: flex;
+        gap: 20px;
+        margin-top: 10px;
+        .film__name {
+          font-size: 16px;
+          font-weight: 700;
+          color: white;
+        }
+      }
+    }
+    .info__detail {
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+    }
+    .info__detail :first-child {
+      color: #a7a9ac;
+    }
+    .payment__ticket__info {
+      flex: 1;
+    }
+    .total {
+      flex: 1;
+    }
+  }
+  .payment__info > div {
+    margin: 10px;
+  }
+}
+.payment__btn__ctn {
+  width: 1000px;
+  margin: 30px auto;
+  text-align: right;
+  .payment__btn {
+    background-color: #efebdb;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
